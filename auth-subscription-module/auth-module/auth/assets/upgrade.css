@@ -1,0 +1,211 @@
+/* auth/assets/upgrade.css */
+
+body.upgrade-page {
+    display: block;
+    background: var(--bg);
+    min-height: 100vh;
+    padding: 0;
+    background-image:
+        radial-gradient(ellipse 70% 40% at 10% 0%, rgba(99,102,241,.1) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 50% at 90% 100%, rgba(139,92,246,.08) 0%, transparent 55%);
+}
+
+/* Nav */
+.upgrade-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(10,14,26,.8);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+.nav-right { display: flex; align-items: center; gap: 14px; }
+.user-pill {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+.btn-outline-sm {
+    padding: 6px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 13px;
+    transition: border-color .2s, color .2s;
+}
+.btn-outline-sm:hover { border-color: var(--accent); color: var(--text); }
+
+/* Main */
+.upgrade-main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+}
+
+/* Limit banner */
+.limit-banner {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(239,68,68,.1);
+    border: 1px solid rgba(239,68,68,.25);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 36px;
+    font-size: 14px;
+    color: #fca5a5;
+    animation: slideUp .4s ease both;
+}
+.limit-icon { font-size: 24px; flex-shrink: 0; }
+.limit-banner strong { display: block; font-size: 15px; margin-bottom: 2px; color: #fff; }
+
+/* Hero */
+.upgrade-hero {
+    text-align: center;
+    margin-bottom: 48px;
+}
+.upgrade-hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #f0f4ff 0%, #a5b4fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.upgrade-hero p { color: var(--text-muted); font-size: 17px; }
+
+/* Plan grid */
+.plan-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    align-items: start;
+}
+
+/* Plan card */
+.plan-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px 26px 26px;
+    position: relative;
+    transition: border-color .25s, transform .25s;
+}
+.plan-card:hover {
+    border-color: rgba(99,102,241,.4);
+    transform: translateY(-3px);
+}
+.plan-featured {
+    border-color: var(--accent) !important;
+    background: linear-gradient(180deg, rgba(99,102,241,.07) 0%, var(--surface) 60%);
+    box-shadow: 0 0 0 1px var(--accent), 0 20px 60px rgba(99,102,241,.15);
+}
+.plan-current { opacity: .7; }
+
+/* Badge */
+.plan-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+.plan-badge-pro {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border-color: transparent;
+    color: #fff;
+}
+
+.plan-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 14px;
+}
+
+.plan-price {
+    margin-bottom: 22px;
+}
+.price-amount {
+    font-family: 'Syne', sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+.price-period {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-left: 2px;
+}
+
+/* Features list */
+.plan-features {
+    list-style: none;
+    margin-bottom: 26px;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+.plan-features li { padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,.04); }
+.plan-features li:last-child { border-bottom: none; }
+.plan-features li:first-child { color: var(--text); }
+
+/* Plan buttons */
+.btn-plan {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Syne', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: opacity .2s, transform .1s;
+}
+.btn-plan:hover  { opacity: .9; transform: scale(.98); }
+.btn-disabled {
+    background: var(--surface2);
+    color: var(--text-muted);
+    cursor: default;
+    opacity: .8 !important;
+    transform: none !important;
+}
+.btn-pro {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #fff;
+}
+.btn-business {
+    background: linear-gradient(135deg, #0ea5e9, #6366f1);
+    color: #fff;
+}
+
+.upgrade-note {
+    text-align: center;
+    margin-top: 28px;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+@media (max-width: 600px) {
+    .upgrade-nav { padding: 14px 16px; }
+    .upgrade-main { padding: 32px 16px 60px; }
+    .plan-grid { grid-template-columns: 1fr; }
+}
